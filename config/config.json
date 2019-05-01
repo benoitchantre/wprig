@@ -1,1 +1,8 @@
-{}
+{
+  "theme": {
+	"slug": "voxia",
+	"name": "Voxia",
+	"author": "S agence",
+	"PHPNamespace": "S\\Voxia\\Theme"
+  }
+}
