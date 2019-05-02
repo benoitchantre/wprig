@@ -14,9 +14,14 @@ a:visited {
 }
 
 a:hover,
-a:focus,
+a:focus {
+	color: var(--color-link-hover);
+	text-decoration: none;
+}
+
 a:active {
 	color: var(--color-link-active);
+	text-decoration: none;
 }
 
 a:focus {

@@ -6,13 +6,17 @@
  **/
 
 :root {
-	--global-font-color: #333;
+	--global-font-color: #4b4b4b;
 	--global-font-family: "Source Sans Pro", sans-serif;
-	--global-font-size: 20;
+	--global-font-size: 18;
 	--global-font-line-height: 1.4;
 	--highlight-font-family: "Montserrat", sans-serif;
 	--content-width: 45rem;
 	--dropdown-symbol-width: 0.7em;
+
+	/* Corporate colors */
+	--color-corporate-green: #afce47; /* should be #bacc12 */
+	--color-corporate-grey: #919393;
 
 	/* Custom editor colors */
 	--color-theme-primary: #e36d60;
@@ -27,9 +31,10 @@
 	--color-custom-daylight: #97c0b7;
 	--color-custom-sun: #eee9d1;
 
-	--color-link: #0073aa;
-	--color-link-visited: #333;
-	--color-link-active: #00a0d2;
+	--color-link: var(--color-corporate-green);
+	--color-link-visited: var(--color-corporate-green);
+	--color-link-hover: var(--color-corporate-green);
+	--color-link-active: #a5a9aa;
 
 	--color-quote-border: #000;
 	--color-quote-citation: #6c7781;
