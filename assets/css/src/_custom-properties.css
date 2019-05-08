@@ -13,6 +13,7 @@
 	--highlight-font-family: "Montserrat", sans-serif;
 	--content-width: 48rem;
 	--sidebar-width: 21.75rem;
+	--wide-width: calc(var(--content-width) + var(--sidebar-width) );
 	--dropdown-symbol-width: 0.7em;
 
 	/* Corporate colors */
