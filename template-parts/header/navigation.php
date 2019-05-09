@@ -49,7 +49,8 @@ if ( ! wp_rig()->is_primary_nav_menu_active() ) {
 		<?php esc_html_e( 'Menu', 'wp-rig' ); ?>
 	</button>
 
-	<div class="primary-menu-container">
+	<div class="menu-container">
+		<?php wp_rig()->display_secondary_nav_menu( array( 'menu_id' => 'secondary-menu' ) ); ?>
 		<?php wp_rig()->display_primary_nav_menu( array( 'menu_id' => 'primary-menu' ) ); ?>
 	</div>
 </nav><!-- #site-navigation -->
