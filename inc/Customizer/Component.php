@@ -44,7 +44,6 @@ class Component implements Component_Interface {
 	 */
 	public function action_customize_register( WP_Customize_Manager $wp_customize ) {
 		$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-		$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 		$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
 		if ( isset( $wp_customize->selective_refresh ) ) {
@@ -54,15 +53,6 @@ class Component implements Component_Interface {
 					'selector'        => '.site-title a',
 					'render_callback' => function() {
 						bloginfo( 'name' );
-					},
-				)
-			);
-			$wp_customize->selective_refresh->add_partial(
-				'blogdescription',
-				array(
-					'selector'        => '.site-description',
-					'render_callback' => function() {
-						bloginfo( 'description' );
 					},
 				)
 			);
