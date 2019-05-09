@@ -14,7 +14,7 @@
 	--content-width: 48rem;
 	--sidebar-width: 21.75rem;
 	--wide-width: calc(var(--content-width) + var(--sidebar-width) );
-	--dropdown-symbol-width: 0.7em;
+	--dropdown-symbol-width: 0.5em;
 
 	/* Corporate colors */
 	--color-corporate-green: #afce47; /* should be #bacc12 */
@@ -37,6 +37,8 @@
 	--color-link-visited: var(--color-corporate-green);
 	--color-link-hover: var(--color-corporate-green);
 	--color-link-active: #a5a9aa;
+
+	--color-menu-link: #575a5b;
 
 	--color-quote-border: #000;
 	--color-quote-citation: #6c7781;
