@@ -80,7 +80,7 @@
 
 	.has-sidebar .site {
 		display: grid;
-		margin: 0 1em;
+		margin: 0 1.5rem;
 		grid-row-gap: 3rem;
 		grid-template-columns: 1fr minmax(30rem, var(--content-width)) var(--sidebar-width) 1fr;
 		justify-content: center;
@@ -94,8 +94,8 @@
 	.has-sidebar {
 		& .site-header,
 		& .site-footer {
-			margin-left: -1em;
-			margin-right: -1em;
+			margin-left: -1.5rem;
+			margin-right: -1.5rem;
 		}
 	}
 
@@ -204,21 +204,19 @@ select {
 # Header
 --------------------------------------------------------------*/
 
-.site-header {
-	padding-bottom: 1em;
-}
-
-.site-branding {
-	text-align: center;
-	padding: 60px 0 1.75em;
-}
-
-.header-logo {
-	max-width: 283px;
+.site-header-content {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 2rem 1.5rem;
 }
 
 .site-title {
-	margin: 0 1rem;
+	margin: 0;
+}
+
+.header-logo {
+	width: 190px;
 }
 
 .site-title a {
@@ -226,11 +224,38 @@ select {
 	color: inherit;
 }
 
+@media (--wide-menu-query) {
+
+	.header-logo {
+		width: 283px;
+	}
+
+	.site-header-content {
+		display: flex;
+		align-items: stretch;
+		justify-content: space-between;
+	}
+
+}
+
+@media (--wide-query) {
+
+	.site-header-content {
+		padding-left: 0;
+		padding-right: 0;
+		max-width: var(--wide-width);
+	}
+
+}
+
 /*--------------------------------------------------------------
 ## Basic navigation menus - handles submenu and small screen toggle
 --------------------------------------------------------------*/
 .nav--toggle-small .menu-toggle {
 	display: block;
+	position: absolute;
+	top: 2em;
+	right: 1.5rem;
 	margin: 1.2em auto;
 	padding: 0.6em 1.2em 0.5em;
 	font-family: var(--highlight-font-family);
@@ -355,13 +380,8 @@ select {
 ## Main navigation menu
 --------------------------------------------------------------*/
 .main-navigation {
-	clear: both;
 	display: block;
-	margin: 0 auto 2em;
 	padding: 0 1em;
-	/* stylelint-disable */
-	max-width: var(--content-width);
-	/* stylelint-enable */
 }
 
 .main-navigation a {
@@ -400,6 +420,22 @@ select {
 }
 
 @media (--wide-menu-query) {
+
+	.main-navigation {
+		display: flex;
+		flex: 1 1 auto;
+		flex-direction: column;
+		justify-content: space-between;
+		padding-right: 0;
+	}
+
+	.main-navigation > .menu-primary {
+		margin-bottom: -0.7rem;
+	}
+
+	.main-navigation > .menu-secondary {
+		margin-top: -0.7rem;
+	}
 
 	.main-navigation ul li a {
 		padding: 0.4em 0.5em;
