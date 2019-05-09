@@ -11,7 +11,9 @@
 	--global-font-size: 18;
 	--global-font-line-height: 1.4;
 	--highlight-font-family: "Montserrat", sans-serif;
-	--content-width: 45rem;
+	--content-width: 48rem;
+	--sidebar-width: 21.75rem;
+	--wide-width: calc(var(--content-width) + var(--sidebar-width) );
 	--dropdown-symbol-width: 0.7em;
 
 	/* Corporate colors */

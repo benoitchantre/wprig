@@ -72,7 +72,6 @@
 .page-header,
 .entry-header,
 .entry-footer,
-.site-info,
 .post-navigation,
 .page-navigation,
 .comments-area {
@@ -92,13 +91,43 @@
 	.page-header,
 	.entry-header,
 	.entry-footer,
-	.site-info,
 	.post-navigation,
 	.page-navigation,
 	.comments-area {
 		padding-left: 0;
 		padding-right: 0;
 	}
+
+}
+
+@media (--sidebar-query) {
+
+	.page-content > *,
+	.entry-content > *,
+	.entry-summary > *,
+	.page-header,
+	.entry-header,
+	.entry-footer,
+	.post-navigation,
+	.page-navigation,
+	.comments-area {
+		margin-left: calc(50% - var(--wide-width) / 2);
+	}
+
+	.has-sidebar {
+		& .page-content > *,
+		& .entry-content > *,
+		& .entry-summary > *,
+		& .page-header,
+		& .entry-header,
+		& .entry-footer,
+		& .post-navigation,
+		& .page-navigation,
+		& .comments-area {
+			margin-left: auto;
+		}
+	}
+
 }
 
 .entry-content ul,
@@ -165,7 +194,7 @@
 }
 
 .alignwide {
-	max-width: calc(50% + var(--content-width) / 2);
+	max-width: var(--wide-width);
 }
 
 .alignfull {
