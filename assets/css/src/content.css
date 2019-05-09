@@ -72,7 +72,6 @@
 .page-header,
 .entry-header,
 .entry-footer,
-.site-info,
 .post-navigation,
 .page-navigation,
 .comments-area {
@@ -92,13 +91,13 @@
 	.page-header,
 	.entry-header,
 	.entry-footer,
-	.site-info,
 	.post-navigation,
 	.page-navigation,
 	.comments-area {
 		padding-left: 0;
 		padding-right: 0;
 	}
+
 }
 
 @media (--sidebar-query) {

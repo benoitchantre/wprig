@@ -569,7 +569,20 @@ select {
 }
 
 .site-info {
+	margin: 1.5em auto;
+	padding-right: 1.5rem;
+	padding-left: 1.5rem;
+	max-width: var(--wide-width);
 	text-align: center;
+}
+
+@media (--content-query) {
+
+	.site-info {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
 }
 
 /*--------------------------------------------------------------
