@@ -64,6 +64,10 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		return array(
 			'is_primary_nav_menu_active' => array( $this, 'is_primary_nav_menu_active' ),
 			'display_primary_nav_menu'   => array( $this, 'display_primary_nav_menu' ),
+			'is_secondary_nav_menu_active' => array( $this, 'is_secondary_nav_menu_active' ),
+			'display_secondary_nav_menu'   => array( $this, 'display_secondary_nav_menu' ),
+			'is_footer_nav_menu_active'  => array( $this, 'is_footer_nav_menu_active' ),
+			'display_footer_nav_menu'    => array( $this, 'display_footer_nav_menu' ),
 		);
 	}
 
@@ -74,7 +78,9 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 */
 	public function set_navs_menus() {
 		$this->nav_menus = array(
-			'primary' => esc_html__( 'Primary', 'wp-rig' ),
+			'primary'   => esc_html__( 'Header (primary)', 'wp-rig' ),
+			'secondary' => esc_html__( 'Header (secondary)', 'wp-rig' ),
+			'footer' => esc_html__( 'Footer', 'wp-rig' ),
 		);
 	}
 
@@ -182,6 +188,81 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		);
 
 		$args['theme_location'] = $this->get_primary_menu_slug();
+
+		wp_nav_menu( $args );
+	}
+
+	/**
+	 * Get the seconday nav menu slug.
+	 *
+	 * @return string Secondary menu location identifier (like a slug).
+	 */
+	public function get_secondary_menu_slug() : string {
+		return 'secondary';
+	}
+
+	/**
+	 * Checks whether the secondary navigation menu is active.
+	 *
+	 * @return bool True if the secondary navigation menu is active, false otherwise.
+	 */
+	public function is_secondary_nav_menu_active() : bool {
+		return (bool) has_nav_menu( $this->get_secondary_menu_slug() );
+	}
+
+	/**
+	 * Displays the secondary navigation menu.
+	 *
+	 * @param array $args Optional. Array of arguments. See `wp_nav_menu()` documentation for a list of supported
+	 *                    arguments.
+	 */
+	public function display_secondary_nav_menu( array $args = array() ) {
+		$args = wp_parse_args(
+			$args,
+			array(
+				'container' => 'ul',
+
+			)
+		);
+
+		$args['theme_location'] = $this->get_secondary_menu_slug();
+
+		wp_nav_menu( $args );
+	}
+
+	/**
+	 * Get the footer nav menu slug.
+	 *
+	 * @return string Footer menu location identifier (like a slug).
+	 */
+	public function get_footer_menu_slug() : string {
+		return 'footer';
+	}
+
+	/**
+	 * Checks whether the footer navigation menu is active.
+	 *
+	 * @return bool True if the footer navigation menu is active, false otherwise.
+	 */
+	public function is_footer_nav_menu_active() : bool {
+		return (bool) has_nav_menu( $this->get_footer_menu_slug() );
+	}
+
+	/**
+	 * Displays the footer navigation menu.
+	 *
+	 * @param array $args Optional. Array of arguments. See `wp_nav_menu()` documentation for a list of supported
+	 *                    arguments.
+	 */
+	public function display_footer_nav_menu( array $args = array() ) {
+		$args = wp_parse_args(
+			$args,
+			array(
+				'container' => 'ul',
+			)
+		);
+
+		$args['theme_location'] = $this->get_footer_menu_slug();
 
 		wp_nav_menu( $args );
 	}
