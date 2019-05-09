@@ -208,15 +208,6 @@ select {
 	padding-bottom: 1em;
 }
 
-.header-image {
-	margin: 0 auto;
-}
-
-.header-image img {
-	display: block;
-	margin: 0 auto;
-}
-
 .site-branding {
 	text-align: center;
 	padding: 60px 0 1.75em;

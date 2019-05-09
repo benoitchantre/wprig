@@ -70,9 +70,6 @@ class Theme_Support_Tests extends Integration_Test_Case {
 			[
 				'amp',
 			],
-			[
-				'custom-header',
-			],
 		];
 	}
 
