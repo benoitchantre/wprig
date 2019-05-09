@@ -213,13 +213,12 @@ select {
 	padding: 60px 0 1.75em;
 }
 
+.header-logo {
+	max-width: 283px;
+}
+
 .site-title {
-	margin: 0 1em;
-	font-family: var(--highlight-font-family);
-	font-size: 38px;
-	font-weight: 700;
-	line-height: 1.2;
-	color: #333332;
+	margin: 0 1rem;
 }
 
 .site-title a {
