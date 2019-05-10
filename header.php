@@ -36,7 +36,7 @@ namespace WP_Rig\WP_Rig;
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'wp-rig' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="site-header-content">
+		<div class="site-header-content row alignwide">
 			<?php get_template_part( 'template-parts/header/branding' ); ?>
 
 			<?php get_template_part( 'template-parts/header/navigation' ); ?>

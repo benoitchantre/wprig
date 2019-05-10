@@ -222,9 +222,8 @@ select {
 
 .site-header-content {
 	position: relative;
-	margin-left: auto;
-	margin-right: auto;
-	padding: 2rem 1.5rem;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
 }
 
 .site-title {
@@ -250,16 +249,6 @@ select {
 		display: flex;
 		align-items: stretch;
 		justify-content: space-between;
-	}
-
-}
-
-@media (--wide-query) {
-
-	.site-header-content {
-		padding-left: 0;
-		padding-right: 0;
-		max-width: var(--wide-width);
 	}
 
 }
