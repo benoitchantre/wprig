@@ -4,7 +4,18 @@
 
 .primary-sidebar {
 	padding: 1.5rem;
-	font-family: var(--highlight-font-family);
+
+	& .widget-title {
+		  text-transform: lowercase;
+	}
+
+	& .widget {
+		text-align: right;
+	}
+
+	& .rss-widget-icon {
+		margin-left: auto;
+	}
 }
 
 @media (--sidebar-query) {
