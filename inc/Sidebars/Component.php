@@ -57,10 +57,13 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 */
 	public function template_tags() : array {
 		return array(
-			'template_has_active_sidebar'  => array( $this, 'template_has_active_sidebar' ),
-			'get_template_active_sidebars' => array( $this, 'get_template_active_sidebars' ),
-			'is_primary_sidebar_active'    => array( $this, 'is_primary_sidebar_active' ),
-			'display_primary_sidebar'      => array( $this, 'display_primary_sidebar' ),
+			'template_has_active_sidebar'      => array( $this, 'template_has_active_sidebar' ),
+			'get_template_active_sidebars'     => array( $this, 'get_template_active_sidebars' ),
+			'is_primary_sidebar_active'        => array( $this, 'is_primary_sidebar_active' ),
+			'display_primary_sidebar'          => array( $this, 'display_primary_sidebar' ),
+			'is_footer_sidebar_active'         => array( $this, 'is_footer_sidebar_active' ),
+			'display_primary_footer_sidebar'   => array( $this, 'display_primary_footer_sidebar' ),
+			'display_secondary_footer_sidebar' => array( $this, 'display_secondary_footer_sidebar' ),
 		);
 	}
 
@@ -77,6 +80,30 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				'after_widget'  => '</section>',
 				'before_title'  => '<h2 class="widget-title">',
 				'after_title'   => '</h2>',
+			)
+		);
+
+		register_sidebar(
+			array(
+				'name'          => esc_html__( 'Footer 1', 'wp-rig' ),
+				'id'            => 'footer-1',
+				'description'   => esc_html__( 'Add widgets here.', 'wp-rig' ),
+				'before_widget' => '<section id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</section>',
+				'before_title'  => '<h5 class="widget-title">',
+				'after_title'   => '</h5>',
+			)
+		);
+
+		register_sidebar(
+			array(
+				'name'          => esc_html__( 'Footer 2', 'wp-rig' ),
+				'id'            => 'footer-2',
+				'description'   => esc_html__( 'Add widgets here.', 'wp-rig' ),
+				'before_widget' => '<section id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</section>',
+				'before_title'  => '<h5 class="widget-title">',
+				'after_title'   => '</h5>',
 			)
 		);
 	}
@@ -149,5 +176,28 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 */
 	public function display_primary_sidebar() {
 		dynamic_sidebar( static::PRIMARY_SIDEBAR_SLUG );
+	}
+
+	/**
+	 * Checks whether a footer sidebar is active.
+	 *
+	 * @return bool True if at least one sidebar is active, false otherwise.
+	 */
+	public function is_footer_sidebar_active() : bool {
+		return (bool) is_active_sidebar( 'footer-1' ) || is_active_sidebar( 'footer-2' );
+	}
+
+	/**
+	 * Displays the primary footer sidebar.
+	 */
+	public function display_primary_footer_sidebar() {
+		dynamic_sidebar( 'footer-1' );
+	}
+
+	/**
+	 * Displays the secondary footer sidebar.
+	 */
+	public function display_secondary_footer_sidebar() {
+		dynamic_sidebar( 'footer-2' );
 	}
 }
