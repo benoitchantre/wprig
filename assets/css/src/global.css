@@ -597,6 +597,28 @@ select {
 	color: #fff;
 	margin: 1em 0 0;
 	padding: 2em 0;
+
+	/* stylelint-disable */
+	& a {
+		color: inherit;
+		text-decoration: none;
+
+		&:focus,
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	/* stylelint-enable */
+
+	& .row {
+		margin-top: 1.5em;
+		margin-bottom: 1.5em;
+	}
+
+	& .site-info {
+		font-size: 1rem;
+		margin-bottom: 0;
+	}
 }
 
 .footer-logo {
@@ -604,33 +626,44 @@ select {
 	width: 260px;
 }
 
-.site-info {
-	font-size: 1rem;
-	margin: 1.5em auto 0;
-}
-
 .social-links {
 	margin-top: 1em;
 	margin-bottom: 1em;
 }
 
-/* stylelint-disable */
-.site-info a {
-	color: inherit;
-	text-decoration: none;
+.menu-footer {
+	margin: 0;
+	padding: 0 0 0 0.5rem;
+	list-style: none;
 
-	&:focus,
-	&:hover {
-		text-decoration: underline;
+	& .menu-item {
+		font-size: 0.875rem;
+		position: relative;
+		margin-bottom: 0.75em;
+
+		&:before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			margin-left: -0.5em;
+			content: '›';
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
 	}
 }
-/* stylelint-enable */
 
 @media (--content-query) {
 
-	.footer-branding {
+	.footer-branding,
+	.footer-content {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
+	}
+
+	.footer-branding {
 		align-items: flex-end;
 	}
 
@@ -638,7 +671,8 @@ select {
 
 @media (--sidebar-query) {
 
-	.footer-branding {
+	.footer-branding,
+	.footer-content {
 		grid-template-columns: repeat(3, 1fr);
 	}
 
@@ -649,7 +683,6 @@ select {
 	}
 
 }
-
 
 /*--------------------------------------------------------------
 # Infinite scroll
