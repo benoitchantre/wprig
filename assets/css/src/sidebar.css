@@ -6,7 +6,7 @@
 	padding: 1.5rem;
 
 	& .widget-title {
-		  text-transform: lowercase;
+		text-transform: lowercase;
 	}
 
 	& .widget {

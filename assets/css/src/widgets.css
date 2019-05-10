@@ -201,7 +201,7 @@
 	font-size: 0.875rem;
 
 	& .textwidget {
-		font-size: inherit;
+		  font-size: inherit;
 	}
 
 	& .menu {
@@ -210,19 +210,20 @@
 		list-style: none;
 
 		& .menu-item {
-			  position: relative;
-			  margin-bottom: 0.75em;
+			position: relative;
+			margin-bottom: 0.75em;
 
-		&::before {
-			 position: absolute;
-			 top: 0;
-			 left: 0;
-			 margin-left: -0.5em;
-			 content: "›";
-		}
+			&::before {
+				position: absolute;
+				top: 0;
+				left: 0;
+				margin-left: -0.5em;
+				content: "›";
+			}
 
-		&:last-child {
-			 margin-bottom: 0;
+			&:last-child {
+				margin-bottom: 0;
+			}
 		}
 	}
 }
