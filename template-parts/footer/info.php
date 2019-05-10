@@ -9,7 +9,7 @@ namespace WP_Rig\WP_Rig;
 
 ?>
 
-<div class="site-info">
+<div class="site-info row alignwide">
 	<?php
 	/* translators: Theme author. */
 	printf( esc_html__( '© 2019 Created by %s.', 'wp-rig' ), '<a href="' . esc_url( 'https://s-agence.ch' ) . '">S agence</a>' );
