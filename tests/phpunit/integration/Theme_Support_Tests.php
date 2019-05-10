@@ -56,9 +56,6 @@ class Theme_Support_Tests extends Integration_Test_Case {
 				'responsive-embeds',
 			],
 			[
-				'custom-logo',
-			],
-			[
 				'wp-block-styles',
 			],
 			[
@@ -72,9 +69,6 @@ class Theme_Support_Tests extends Integration_Test_Case {
 			],
 			[
 				'amp',
-			],
-			[
-				'custom-header',
 			],
 		];
 	}

@@ -279,7 +279,7 @@ class Component implements Component_Interface {
 	protected function should_skip_image_with_blacklisted_class( string $classes ) : bool {
 		$blacklisted_classes = array(
 			'skip-lazy',
-			'custom-logo',
+			'header-logo',
 		);
 
 		foreach ( $blacklisted_classes as $class ) {

@@ -357,8 +357,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		}
 
 		$google_fonts = array(
-			'Montserrat' => array( '700', '700i' ),
-			'Source Sans Pro'     => array( '400', '400i', '600', '600i', '700', '700i' ),
+			'Montserrat'      => array( '700', '700i' ),
+			'Source Sans Pro' => array( '400', '400i', '600', '600i', '700', '700i' ),
 		);
 
 		/**
