@@ -8,6 +8,12 @@
 	margin-bottom: 1.5em;
 }
 
+.widget-title {
+	color: var(--global-font-color);
+	font-size: 1.125rem;
+	letter-spacing: 0.2em;
+}
+
 .widget-area .widget {
 	margin-left: 0;
 	margin-right: 0;
@@ -36,10 +42,6 @@
 }
 
 /* Archive and Categories widgets */
-.widget_archive li {
-	color: #7d7d7d;
-}
-
 .widget_categories .children {
 	padding-top: 0;
 }
@@ -59,9 +61,7 @@
 .widget_pages a,
 .widget_nav_menu a {
 	display: block;
-	padding: 0.6em 0;
 	text-decoration: none;
-	border-bottom: 1px dashed #808080;
 }
 
 .widget_pages a:hover,
@@ -69,7 +69,6 @@
 .widget_nav_menu a:hover,
 .widget_nav_menu a:focus {
 	text-decoration: none;
-	border-bottom: 1px dashed #808080;
 }
 
 .widget_pages li,
@@ -100,20 +99,28 @@
 
 /* RSS widget */
 .widget_rss li {
+	display: flex;
+	flex-direction: column;
 	margin-bottom: 1em;
 	line-height: 1.3;
 }
 
 .widget li a.rsswidget {
-	padding-right: 0.5em;
 	font-size: 1em;
 	line-height: 1.4;
 }
 
 .rss-date,
 .widget_rss cite {
-	color: #333;
 	font-size: 0.8em;
+}
+
+.rss-date {
+	order: 1;
+}
+
+.widget_rss cite {
+	font-weight: 700;
 }
 
 .rssSummary {
@@ -184,8 +191,35 @@
 }
 
 /* Footer widget stylings */
-.footer-widgets {
-	margin: 2em 0 0;
-	padding: 1em 0;
-	background-color: #1a1a1a;
+.footer-widget-title {
+	color: #fff;
+	font-size: 1.125rem;
+	text-transform: none;
+}
+
+.footer-widget {
+	font-size: 0.875rem;
+}
+
+.footer-widget .menu {
+	margin: 0;
+	padding: 0 0 0 0.5rem;
+	list-style: none;
+
+	& .menu-item {
+		  position: relative;
+		  margin-bottom: 0.75em;
+
+		&::before {
+			 position: absolute;
+			 top: 0;
+			 left: 0;
+			 margin-left: -0.5em;
+			 content: "›";
+		 }
+
+		&:last-child {
+			 margin-bottom: 0;
+		}
+	}
 }

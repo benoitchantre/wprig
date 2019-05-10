@@ -78,8 +78,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				'description'   => esc_html__( 'Add widgets here.', 'wp-rig' ),
 				'before_widget' => '<section id="%1$s" class="widget %2$s">',
 				'after_widget'  => '</section>',
-				'before_title'  => '<h2 class="widget-title">',
-				'after_title'   => '</h2>',
+				'before_title'  => '<h4 class="widget-title">',
+				'after_title'   => '</h4>',
 			)
 		);
 
@@ -88,9 +88,9 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				'name'          => esc_html__( 'Footer 1', 'wp-rig' ),
 				'id'            => 'footer-1',
 				'description'   => esc_html__( 'Add widgets here.', 'wp-rig' ),
-				'before_widget' => '<section id="%1$s" class="widget %2$s">',
+				'before_widget' => '<section id="%1$s" class="widget footer-widget %2$s">',
 				'after_widget'  => '</section>',
-				'before_title'  => '<h5 class="widget-title">',
+				'before_title'  => '<h5 class="footer-widget-title">',
 				'after_title'   => '</h5>',
 			)
 		);
@@ -100,9 +100,9 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				'name'          => esc_html__( 'Footer 2', 'wp-rig' ),
 				'id'            => 'footer-2',
 				'description'   => esc_html__( 'Add widgets here.', 'wp-rig' ),
-				'before_widget' => '<section id="%1$s" class="widget %2$s">',
+				'before_widget' => '<section id="%1$s" class="widget footer-widget %2$s">',
 				'after_widget'  => '</section>',
-				'before_title'  => '<h5 class="widget-title">',
+				'before_title'  => '<h5 class="footer-widget-title">',
 				'after_title'   => '</h5>',
 			)
 		);
@@ -121,10 +121,10 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			case '404.php':
 			case '500.php':
 			case 'offline.php':
-				$sidebars = array( '' );
+				$sidebars = array( 'footer-1', 'footer-2' );
 				break;
 			default:
-				$sidebars = array( static::PRIMARY_SIDEBAR_SLUG );
+				$sidebars = array( 'footer-1', 'footer-2', static::PRIMARY_SIDEBAR_SLUG, );
 		}
 
 		return $sidebars;

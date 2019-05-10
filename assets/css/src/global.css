@@ -631,30 +631,6 @@ select {
 	margin-bottom: 1em;
 }
 
-.menu-footer {
-	margin: 0;
-	padding: 0 0 0 0.5rem;
-	list-style: none;
-
-	& .menu-item {
-		font-size: 0.875rem;
-		position: relative;
-		margin-bottom: 0.75em;
-
-		&::before {
-			position: absolute;
-			top: 0;
-			left: 0;
-			margin-left: -0.5em;
-			content: "›";
-		}
-
-		&:last-child {
-			margin-bottom: 0;
-		}
-	}
-}
-
 @media (--content-query) {
 
 	.footer-branding,
