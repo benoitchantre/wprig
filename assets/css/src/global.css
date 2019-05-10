@@ -599,9 +599,19 @@ select {
 	padding: 2em 0;
 }
 
+.footer-logo {
+	filter: brightness(0%) invert(100%);
+	width: 260px;
+}
+
 .site-info {
 	font-size: 1rem;
 	margin: 1.5em auto 0;
+}
+
+.social-links {
+	margin-top: 1em;
+	margin-bottom: 1em;
 }
 
 /* stylelint-disable */
@@ -616,6 +626,29 @@ select {
 }
 /* stylelint-enable */
 
+@media (--content-query) {
+
+	.footer-branding {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		align-items: flex-end;
+	}
+
+}
+
+@media (--sidebar-query) {
+
+	.footer-branding {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.social-links {
+		margin-top: 0;
+		margin-bottom: 0;
+		grid-column: 3;
+	}
+
+}
 
 
 /*--------------------------------------------------------------
