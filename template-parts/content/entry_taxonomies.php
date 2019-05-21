@@ -43,10 +43,10 @@ $taxonomies = wp_list_filter(
 
 		if ( $taxonomy->hierarchical ) {
 			/* translators: %s: list of taxonomy terms */
-			$placeholder_text = __( 'Posted in %s', 'wp-rig' );
+			$placeholder_text = __( 'Categories: %s', 'wp-rig' );
 		} else {
 			/* translators: %s: list of taxonomy terms */
-			$placeholder_text = __( 'Tagged %s', 'wp-rig' );
+			$placeholder_text = __( 'Tags: %s', 'wp-rig' );
 		}
 
 		?>

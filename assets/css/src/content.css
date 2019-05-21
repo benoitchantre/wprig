@@ -36,10 +36,11 @@
 	margin: 1em 0;
 }
 
+.tag-links::before,
 .posted-on::before {
 	content: '|';
 	margin-left: 0.5em;
-	margin-right: 0.5em;
+	margin-right: 0.25em;
 }
 
 .posted-on a {
