@@ -71,8 +71,6 @@
 .page-content > *,
 .entry-content > *,
 .entry-summary > * {
-	margin-right: auto;
-	margin-left: auto;
 	padding-right: 1.5rem;
 	padding-left: 1.5rem;
 	/* stylelint-disable */
@@ -86,7 +84,7 @@
 .post-navigation,
 .page-navigation,
 .comments-area {
-	margin: 1.5em auto;
+	margin: 1.5em 0;
 	padding-right: 1.5rem;
 	padding-left: 1.5rem;
 	/* stylelint-disable */
@@ -94,24 +92,26 @@
 	/* stylelint-enable */
 }
 
-@media (--content-query) {
+@media (--sidebar-query) {
 
-	.page-content > *,
-	.entry-content > *,
-	.entry-summary > *,
-	.page-header,
-	.entry-header,
-	.entry-footer,
-	.post-navigation,
-	.page-navigation,
-	.comments-area {
-		padding-left: 0;
-		padding-right: 0;
+	.has-sidebar {
+		& .page-content > *,
+		& .entry-content > *,
+		& .entry-summary > *,
+		& .page-header,
+		& .entry-header,
+		& .entry-footer,
+		& .post-navigation,
+		& .page-navigation,
+		& .comments-area {
+			padding-left: 0;
+			padding-right: 0;
+		}
 	}
 
 }
 
-@media (--sidebar-query) {
+@media (--wide-query) {
 
 	.page-content > *,
 	.entry-content > *,
@@ -123,6 +123,8 @@
 	.page-navigation,
 	.comments-area {
 		margin-left: calc(50% - var(--wide-width) / 2);
+		padding-left: 0;
+		padding-right: 0;
 	}
 
 	.has-sidebar {
@@ -135,7 +137,7 @@
 		& .post-navigation,
 		& .page-navigation,
 		& .comments-area {
-			margin-left: auto;
+			margin-left: 0;
 		}
 	}
 
