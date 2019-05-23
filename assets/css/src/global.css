@@ -493,19 +493,20 @@ select {
 .site-main .post-navigation,
 .site-main .pagination {
 	border-bottom: 1px solid #111;
-	margin: 0 auto 2em;
+	margin: 0 0 2em;
 	max-width: var(--content-width);
 	overflow: hidden;
 	padding: 0 1.5rem 2em;
 	font-family: var(--highlight-font-family);
 }
 
-@media (--content-query) {
+@media (--wide-query) {
 
 	.site-main .comment-navigation,
 	.site-main .posts-navigation,
 	.site-main .post-navigation,
 	.site-main .pagination {
+		margin-left: calc(50% - var(--wide-width) / 2);
 		padding-left: 0;
 		padding-right: 0;
 	}
@@ -540,7 +541,6 @@ select {
 }
 
 .pagination .nav-links {
-	justify-content: center;
 	flex-wrap: wrap;
 }
 
