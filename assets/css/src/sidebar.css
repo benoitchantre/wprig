@@ -9,10 +9,6 @@
 		text-transform: lowercase;
 	}
 
-	& .widget {
-		text-align: right;
-	}
-
 	& .rss-widget-icon {
 		margin-left: auto;
 	}
@@ -22,5 +18,9 @@
 
 	.primary-sidebar {
 		padding: 0;
+
+		& .widget {
+			text-align: right;
+		}
 	}
 }
