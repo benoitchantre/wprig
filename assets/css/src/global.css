@@ -492,8 +492,7 @@ select {
 .site-main .posts-navigation,
 .site-main .post-navigation,
 .site-main .pagination {
-	border-bottom: 1px solid #111;
-	margin: 0 0 2em;
+	margin: 3rem 0 3rem;
 	max-width: var(--content-width);
 	overflow: hidden;
 	padding: 0 1.5rem 2em;
