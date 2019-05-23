@@ -29,8 +29,8 @@ h6 {
 	clear: both;
 }
 
-.entry-header h1.entry-title,
-.page-header .page-title {
+h1.entry-title,
+.page-title {
 	font-size: 2.635rem;
 	line-height: 1.1;
 	margin-top: 1em;
