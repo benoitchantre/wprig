@@ -85,22 +85,18 @@
 
 @media (--sidebar-query) {
 
-	.has-sidebar .site {
-		display: grid;
-		margin: 0 1.5rem;
-		grid-row-gap: 3rem;
-		grid-template-columns: 1fr minmax(30rem, var(--content-width)) var(--sidebar-width) 1fr;
-		justify-content: center;
-	}
-
-	.site-header,
-	.site-footer {
-		grid-column: 1 / -1;
-	}
-
 	.has-sidebar {
+		& .site {
+			display: grid;
+			margin: 0 1.5rem;
+			grid-row-gap: 3rem;
+			grid-template-columns: 1fr minmax(30rem, var(--content-width)) var(--sidebar-width) 1fr;
+			justify-content: center;
+		}
+
 		& .site-header,
 		& .site-footer {
+			grid-column: 1 / -1;
 			margin-left: -1.5rem;
 			margin-right: -1.5rem;
 		}
