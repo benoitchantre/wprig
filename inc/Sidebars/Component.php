@@ -118,6 +118,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 
 		switch ( basename( $template ) ) {
 			case 'front-page.php':
+			case 'home.php':
+			case 'archive.php':
 			case '404.php':
 			case '500.php':
 			case 'offline.php':
