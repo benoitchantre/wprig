@@ -120,6 +120,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			case 'front-page.php':
 			case 'home.php':
 			case 'archive.php':
+			case 'full-width.php':
 			case '404.php':
 			case '500.php':
 			case 'offline.php':
