@@ -146,6 +146,7 @@ class Theme {
 			new Nav_Menus\Component(),
 			new Sidebars\Component(),
 			new Custom_Background\Component(),
+			new Post\Component(),
 			new Post_Thumbnails\Component(),
 			new Customizer\Component(),
 			new Styles\Component(),

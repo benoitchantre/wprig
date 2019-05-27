@@ -40,67 +40,24 @@ if ( post_type_supports( $post_type_obj->name, 'author' ) ) {
 	);
 }
 
-$parent_string = '';
-
-// Show parent post only if available and if the post type is 'attachment'.
-if ( ! empty( $post->post_parent ) && 'attachment' === get_post_type() ) {
-	$parent_string = sprintf(
-		'<a href="%1$s">%2$s</a>',
-		esc_url( get_permalink( $post->post_parent ) ),
-		esc_html( get_the_title( $post->post_parent ) )
-	);
-}
-
 ?>
 <div class="entry-meta">
 	<?php
-	if ( ! empty( $time_string ) ) {
-		?>
-		<span class="posted-on">
-			<?php
-			printf(
-				/* translators: %s: post date */
-				esc_html_x( 'Posted on %s', 'post date', 'wp-rig' ),
-				$time_string // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			);
-			?>
-		</span>
-		<?php
-	}
-
 	if ( ! empty( $author_string ) ) {
 		?>
 		<span class="posted-by">
 			<?php
-			/* translators: %s: post author */
-			$author_byline = _x( 'By %s', 'post author', 'wp-rig' );
-			if ( ! empty( $time_string ) ) {
-				/* translators: %s: post author */
-				$author_byline = _x( 'by %s', 'post author', 'wp-rig' );
-			}
-			printf(
-				esc_html( $author_byline ),
-				$author_string // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			);
+			echo $author_string; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			?>
 		</span>
 		<?php
 	}
 
-	if ( ! empty( $parent_string ) ) {
+	if ( ! empty( $time_string ) ) {
 		?>
-		<span class="posted-in">
+		<span class="posted-on">
 			<?php
-			/* translators: %s: post parent title */
-			$parent_note = _x( 'In %s', 'post parent', 'wp-rig' );
-			if ( ! empty( $time_string ) || ! empty( $author_string ) ) {
-				/* translators: %s: post parent title */
-				$parent_note = _x( 'in %s', 'post parent', 'wp-rig' );
-			}
-			printf(
-				esc_html( $parent_note ),
-				$parent_string // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			);
+			echo $time_string; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			?>
 		</span>
 		<?php
