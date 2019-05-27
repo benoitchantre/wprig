@@ -127,7 +127,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				$sidebars = array( 'footer-1', 'footer-2' );
 				break;
 			default:
-				$sidebars = array( 'footer-1', 'footer-2', static::PRIMARY_SIDEBAR_SLUG, );
+				$sidebars = array( 'footer-1', 'footer-2', static::PRIMARY_SIDEBAR_SLUG );
 		}
 
 		return $sidebars;
