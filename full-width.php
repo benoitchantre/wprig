@@ -1,9 +1,6 @@
 <?php
 /**
- * Template Name: Custom Page Template
- *
- * When active, by adding the heading above and providing a custom name
- * this template becomes available in a drop-down panel in the editor.
+ * Template Name: Full width
  *
  * Filename can be anything.
  *
@@ -30,5 +27,4 @@ wp_rig()->print_styles( 'wp-rig-content' );
 		?>
 	</main><!-- #primary -->
 <?php
-get_sidebar();
 get_footer();
