@@ -37,6 +37,10 @@ h1.entry-title,
 	margin-bottom: 1rem;
 }
 
+.page-title {
+	color: var(--global-font-color);
+}
+
 /* stylelint-disable */
 h1 {
 	font-size: 2.635rem;
