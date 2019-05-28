@@ -1,0 +1,15 @@
+.wp-block-voxia-header {
+	font-family: var(--highlight-font-family);
+	font-weight: 700;
+}
+
+.voxia-header__subhead {
+	margin: 0.5rem 0;
+}
+
+.voxia-header__statement {
+	font-size: 3rem;
+	line-height: 1.1;
+	text-transform: uppercase;
+	margin: 0.5rem 0;
+}

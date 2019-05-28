@@ -54,4 +54,20 @@ if ( is_404() ) {
 		?>
 	</header><!-- .page-header -->
 	<?php
+} elseif ( is_singular() ) {
+	$intro_block_id = (int) get_post_meta( get_the_ID(), 'page-header', true );
+
+	if ( ! $intro_block_id ) {
+		return;
+	}
+
+	$intro_block = get_post( $intro_block_id );
+
+	if ( 'wp_block' === get_post_type( $intro_block ) ) {
+		?>
+		<header class="page-header">
+			<?php echo wp_kses_post( do_blocks( $intro_block->post_content ) ); ?>
+		</header>
+		<?php
+	}
 }

@@ -32,6 +32,9 @@
  * .wp-block-archives
  */
 
+@import "blocks/_voxia-header.css";
+
+
 .wp-block-quote.is-large,
 .wp-block-quote.is-style-large {
 	margin: 1.5em auto;
