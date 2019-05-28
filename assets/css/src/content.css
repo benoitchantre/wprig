@@ -42,12 +42,9 @@
 	}
 }
 
-.entry {
+.entry,
+.entry-taxonomies {
 	margin-bottom: 1rem;
-}
-
-.entry-meta {
-	margin: 1em 0;
 }
 
 .tag-links::before,
@@ -199,6 +196,11 @@
 /* Align .more-link with the content. */
 .entry-content > .more-link {
 	display: block;
+}
+
+.page-header {
+	margin-top: 5rem;
+	margin-bottom: 5rem;
 }
 
 .page-links {
