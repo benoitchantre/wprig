@@ -40,6 +40,15 @@
 	& :last-child {
 		margin-bottom: 0;
 	}
+
+	& .entry-title {
+		font-size: 1.125rem;
+		text-transform: none;
+	}
+
+	& a {
+		text-decoration: none;
+	}
 }
 
 .entry,
