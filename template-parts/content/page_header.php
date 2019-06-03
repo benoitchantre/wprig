@@ -24,13 +24,27 @@ if ( is_404() ) {
 	</header><!-- .page-header -->
 	<?php
 } elseif ( is_home() && ! is_front_page() ) {
-	?>
-	<header class="page-header">
-		<h1 class="page-title">
-			<?php single_post_title(); ?>
-		</h1>
-	</header><!-- .page-header -->
-	<?php
+	$page_for_posts = get_option( 'page_for_posts' );
+	$intro_block_id = (int) get_post_meta( $page_for_posts, 'page-header', true );
+
+	if ( ! $intro_block_id ) {
+		?>
+		<header class="page-header">
+			<h1 class="page-title"><?php echo esc_html( get_the_title( $page_for_posts ) ); ?></h1>
+		</header>
+		<?php
+		return;
+	}
+
+	$intro_block = get_post( $intro_block_id );
+
+	if ( 'wp_block' === get_post_type( $intro_block ) ) {
+		?>
+		<header class="page-header">
+			<?php echo wp_kses_post( do_blocks( $intro_block->post_content ) ); ?>
+		</header><!-- .page-header -->
+		<?php
+	}
 } elseif ( is_search() ) {
 	?>
 	<header class="page-header">
@@ -45,6 +59,22 @@ if ( is_404() ) {
 		</h1>
 	</header><!-- .page-header -->
 	<?php
+} elseif ( is_category() || is_tag() ) {
+	?>
+	<header class="page-header">
+		<div class="wp-block-voxia-header">
+			<?php
+			if ( get_option( 'page_for_posts' ) ) {
+				printf( '<p class="voxia-header__subhead">%s</p>', esc_html( get_the_title( get_option( 'page_for_posts' ) ) ) );
+			}
+			the_archive_title( '<h1 class="page-title voxia-header__statement">', '</h1>' );
+			?>
+		</div>
+		<?php
+		the_archive_description( '<div class="archive-description">', '</div>' );
+		?>
+	</header><!-- .page-header -->
+	<?php
 } elseif ( is_archive() ) {
 	?>
 	<header class="page-header">
@@ -54,4 +84,42 @@ if ( is_404() ) {
 		?>
 	</header><!-- .page-header -->
 	<?php
+} elseif ( is_single() && get_option( 'page_for_posts' ) ) {
+	$page_for_posts = get_option( 'page_for_posts' );
+	$intro_block_id = (int) get_post_meta( $page_for_posts, 'page-header', true );
+
+	if ( ! $intro_block_id ) {
+		?>
+		<header class="page-header">
+			<h1 class="page-title"><?php echo esc_html( get_the_title( $page_for_posts ) ); ?></h1>
+		</header>
+		<?php
+		return;
+	}
+
+	$intro_block = get_post( $intro_block_id );
+
+	if ( 'wp_block' === get_post_type( $intro_block ) ) {
+		?>
+		<header class="page-header">
+			<?php echo wp_kses_post( do_blocks( $intro_block->post_content ) ); ?>
+		</header>
+		<?php
+	}
+} elseif ( is_singular() ) {
+	$intro_block_id = (int) get_post_meta( get_the_ID(), 'page-header', true );
+
+	if ( ! $intro_block_id ) {
+		return;
+	}
+
+	$intro_block = get_post( $intro_block_id );
+
+	if ( 'wp_block' === get_post_type( $intro_block ) ) {
+		?>
+		<header class="page-header">
+			<?php echo wp_kses_post( do_blocks( $intro_block->post_content ) ); ?>
+		</header>
+		<?php
+	}
 }

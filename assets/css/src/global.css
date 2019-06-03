@@ -72,6 +72,7 @@
 # Layouts
 --------------------------------------------------------------*/
 .site {
+	background: url( '../images/background.jpg' ) no-repeat top center;
 	margin: 0 auto;
 	max-width: 100%;
 }
@@ -88,7 +89,7 @@
 	.has-sidebar {
 		& .site {
 			display: grid;
-			margin: 0 1.5rem;
+			padding: 0 1.5rem;
 			grid-template-columns: 1fr minmax(30rem, var(--content-width)) var(--sidebar-width) 1fr;
 			justify-content: center;
 		}
@@ -214,6 +215,11 @@ select {
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
+
+.site-header {
+	background: rgba(255,255,255,0.8);
+	margin-bottom: 8rem;
+}
 
 .site-header-content {
 	position: relative;

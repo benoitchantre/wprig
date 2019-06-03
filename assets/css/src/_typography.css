@@ -33,8 +33,12 @@ h1.entry-title,
 .page-title {
 	font-size: 2.635rem;
 	line-height: 1.1;
-	margin-top: 1em;
-	margin-bottom: 1em;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+.page-title {
+	color: var(--global-font-color);
 }
 
 /* stylelint-disable */
