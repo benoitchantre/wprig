@@ -9,12 +9,17 @@ namespace WP_Rig\WP_Rig\Sidebars;
 
 use WP_Rig\WP_Rig\Component_Interface;
 use WP_Rig\WP_Rig\Templating_Component_Interface;
+use function WP_Rig\WP_Rig\wp_rig;
 use function add_action;
 use function add_filter;
 use function register_sidebar;
 use function esc_html__;
 use function is_active_sidebar;
 use function dynamic_sidebar;
+use function get_theme_file_uri;
+use function get_theme_file_path;
+use function wp_enqueue_script;
+use function is_singular;
 
 /**
  * Class for managing sidebars.
@@ -46,6 +51,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	public function initialize() {
 		add_action( 'widgets_init', array( $this, 'action_register_sidebars' ) );
 		add_filter( 'body_class', array( $this, 'filter_body_classes' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'action_enqueue_navigation_script' ) );
 	}
 
 	/**
@@ -202,5 +208,31 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 */
 	public function display_secondary_footer_sidebar() {
 		dynamic_sidebar( 'footer-2' );
+	}
+
+	/**
+	 * Enqueues a script that adjust that adjust the vertical position of the primary sidebar.
+	 */
+	public function action_enqueue_navigation_script() {
+		// If the AMP plugin is active, return early.
+		if ( wp_rig()->is_amp() ) {
+			return;
+		}
+
+		// If there's no sidebar, return early.
+		if ( ! is_singular() || ! $this->is_primary_sidebar_active() ) {
+			return;
+		}
+
+		// Enqueue the navigation script.
+		wp_enqueue_script(
+			'wp-rig-sidebar',
+			get_theme_file_uri( '/assets/js/sidebar.min.js' ),
+			array(),
+			wp_rig()->get_asset_version( get_theme_file_path( '/assets/js/sidebar.min.js' ) ),
+			true
+		);
+		wp_script_add_data( 'wp-rig-sidebar', 'async', true );
+		wp_script_add_data( 'wp-rig-sidebar', 'precache', true );
 	}
 }
