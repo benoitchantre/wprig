@@ -73,6 +73,7 @@
 --------------------------------------------------------------*/
 .site {
 	background: url( '../images/background.jpg' ) no-repeat top center;
+	background-size: 100%;
 	margin: 0 auto;
 	max-width: 100%;
 }
