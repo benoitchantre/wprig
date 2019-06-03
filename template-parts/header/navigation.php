@@ -54,6 +54,7 @@ if ( ! wp_rig()->is_primary_nav_menu_active() ) {
 		array(
 			'menu_id'    => 'secondary-menu',
 			'menu_class' => 'menu menu-secondary',
+			'depth'      => 2,
 		)
 	);
 
@@ -61,6 +62,7 @@ if ( ! wp_rig()->is_primary_nav_menu_active() ) {
 		array(
 			'menu_id'    => 'primary-menu',
 			'menu_class' => 'menu menu-primary',
+			'depth'      => 3,
 		)
 	);
 	?>

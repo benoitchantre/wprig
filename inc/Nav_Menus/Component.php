@@ -157,7 +157,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		}
 
 		// Add the dropdown for items that have children.
-		if ( ! empty( $item->classes ) && in_array( 'menu-item-has-children', $item->classes ) ) {
+		if ( ! empty( $item->classes ) && in_array( 'menu-item-has-children', $item->classes ) && 0 === $depth ) {
 			return $item_output . '<span class="dropdown"><i class="dropdown-symbol"></i></span>';
 		}
 

@@ -309,6 +309,12 @@ select {
 		z-index: 1;
 	}
 
+	.nav--toggle-sub ul ul ul {
+		display: block;
+		position: static;
+		box-shadow: none;
+	}
+
 	.nav--toggle-sub .dropdown,
 	.nav--toggle-sub .dropdown-toggle {
 		display: block;
@@ -360,8 +366,8 @@ select {
 	}
 
 	/* Need menu-item-has-children for non-JS */
-	.nav--toggle-sub li.menu-item-has-children,
-	.nav--toggle-sub li.menu-item--has-toggle {
+	.nav--toggle-sub .menu > .menu-item-has-children,
+	.nav--toggle-sub .menu > .menu-item--has-toggle {
 		position: relative;
 		padding-right: var(--dropdown-symbol-width);
 	}
@@ -404,11 +410,19 @@ select {
 	padding: 0.5em 1em 0.5em 0;
 	text-decoration: none;
 	color: var(--color-menu-link);
+	line-height: 1.2;
 }
 
 .main-navigation a:hover,
 .main-navigation a:focus {
 	text-decoration: underline;
+}
+
+.main-navigation .sub-menu .sub-menu a {
+	font-weight: 400;
+	font-size: 1rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
 }
 
 .main-navigation .current-menu-item > a,

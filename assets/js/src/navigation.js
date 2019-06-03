@@ -50,7 +50,7 @@ function initNavToggleSubmenus() {
 function initEachNavToggleSubmenu( nav ) {
 
 	// Get the submenus.
-	const SUBMENUS = nav.querySelectorAll( '.menu ul' );
+	const SUBMENUS = nav.querySelectorAll( '.menu > .menu-item > .sub-menu' );
 
 	// No point if no submenus.
 	if ( ! SUBMENUS.length ) {
