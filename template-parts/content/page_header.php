@@ -59,6 +59,22 @@ if ( is_404() ) {
 		</h1>
 	</header><!-- .page-header -->
 	<?php
+} elseif ( is_category() || is_tag() ) {
+	?>
+	<header class="page-header">
+		<div class="wp-block-voxia-header">
+			<?php
+			if ( get_option( 'page_for_posts' ) ) {
+				printf( '<p class="voxia-header__subhead">%s</p>', esc_html( get_the_title( get_option( 'page_for_posts' ) ) ) );
+			}
+			the_archive_title( '<h1 class="page-title voxia-header__statement">', '</h1>' );
+			?>
+		</div>
+		<?php
+		the_archive_description( '<div class="archive-description">', '</div>' );
+		?>
+	</header><!-- .page-header -->
+	<?php
 } elseif ( is_archive() ) {
 	?>
 	<header class="page-header">
