@@ -201,7 +201,7 @@
 	font-size: 0.875rem;
 
 	& .textwidget {
-		  font-size: inherit;
+		font-size: inherit;
 	}
 
 	& .menu {

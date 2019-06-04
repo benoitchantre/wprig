@@ -72,7 +72,7 @@
 # Layouts
 --------------------------------------------------------------*/
 .site {
-	background: url( '../images/background.jpg' ) no-repeat top center;
+	background: url(../images/background.jpg) no-repeat top center;
 	background-size: 100%;
 	margin: 0 auto;
 	max-width: 100%;
@@ -88,6 +88,7 @@
 @media (--sidebar-query) {
 
 	.has-sidebar {
+
 		& .site {
 			display: grid;
 			padding: 0 1.5rem;
@@ -218,7 +219,7 @@ select {
 --------------------------------------------------------------*/
 
 .site-header {
-	background: rgba(255,255,255,0.8);
+	background: rgba(255, 255, 255, 0.8);
 	margin-bottom: 8rem;
 }
 
@@ -335,6 +336,12 @@ select {
 		overflow: visible;
 	}
 
+	.nav--toggle-sub ul ul .dropdown,
+	.nav--toggle-sub ul ul .dropdown-toggle {
+		top: 40%;
+		right: 0.2em;
+	}
+
 	.nav--toggle-sub .menu-secondary .dropdown-toggle {
 		font-size: 0.875em;
 	}
@@ -353,12 +360,6 @@ select {
 
 	.current-menu-ancestor > .dropdown-toggle .dropdown-symbol {
 		border-top-color: var(--color-corporate-green);
-	}
-
-	.nav--toggle-sub ul ul .dropdown,
-	.nav--toggle-sub ul ul .dropdown-toggle {
-		top: 40%;
-		right: 0.2em;
 	}
 
 	.nav--toggle-sub .dropdown-toggle:hover,
@@ -419,6 +420,11 @@ select {
 	text-decoration: underline;
 }
 
+.main-navigation .current-menu-item > a,
+.main-navigation .current-menu-ancestor > a {
+	color: var(--color-corporate-green);
+}
+
 .main-navigation .sub-menu .sub-menu a {
 	font-weight: 400;
 	font-size: 1rem;
@@ -426,15 +432,12 @@ select {
 	padding-right: 1rem;
 }
 
-.main-navigation .current-menu-item > a,
-.main-navigation .current-menu-ancestor > a {
-	color: var(--color-corporate-green);
-}
-
+/* stylelint-disable */
 .main-navigation .menu-secondary a {
 	font-size: 0.875rem;
 	font-weight: 600;
 }
+/* stylelint-enable */
 
 .main-navigation ul {
 	display: block;
@@ -574,6 +577,7 @@ select {
 	text-decoration: none;
 }
 
+/* stylelint-disable */
 .pagination a,
 .pagination a:hover,
 .pagination a:focus,
@@ -581,6 +585,13 @@ select {
 .pagination a:visited {
 	color: var(--color-menu-link);
 }
+
+.pagination a:hover,
+.pagination a:focus,
+.pagination .current {
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+/* stylelint-enable */
 
 .pagination .prev,
 .pagination .next {
@@ -600,12 +611,6 @@ select {
 .pagination .dots {
 	min-width: auto;
 	border: none;
-}
-
-.pagination a:hover,
-.pagination a:focus,
-.pagination .current {
-	box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .pagination .current {
