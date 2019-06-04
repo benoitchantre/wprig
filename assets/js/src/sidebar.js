@@ -2,9 +2,11 @@
  * Initiate the script to adjust the vertical position of the sidebar.
  */
 if ( 'loading' === document.readyState ) {
+
 	// The DOM has not yet been loaded.
 	document.addEventListener( 'DOMContentLoaded', initSidebarPosition );
 } else {
+
 	// The DOM has already been loaded.
 	initSidebarPosition();
 }
