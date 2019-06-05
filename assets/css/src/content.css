@@ -57,6 +57,7 @@
 }
 
 .tag-links::before,
+.voxia-sector-activity-links::before,
 .posted-on::before {
 	content: "|";
 	margin-left: 0.5em;
