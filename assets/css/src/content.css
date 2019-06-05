@@ -56,6 +56,12 @@
 	margin-bottom: 1rem;
 }
 
+.entry-taxonomies,
+.posted-on,
+.entry-footer {
+	font-size: 0.875rem;
+}
+
 .tag-links::before,
 .voxia-sector-activity-links::before,
 .posted-on::before {
@@ -63,15 +69,16 @@
 	margin-left: 0.5em;
 	margin-right: 0.25em;
 }
-
-.posted-on a {
-	color: inherit;
+.author a,
+.term-links a {
+	font-weight: 700;
 	text-decoration: none;
 }
 
-.posted-on,
-.entry-footer {
-	font-size: 0.875em;
+.posted-on a {
+	color: inherit;
+	font-weight: 600;
+	text-decoration: none;
 }
 
 /* Hides the update date and time. */
