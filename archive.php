@@ -21,12 +21,12 @@ wp_rig()->print_styles( 'wp-rig-content' );
 			get_template_part( 'template-parts/content/page_header' );
 
 			?>
-			<div class="article-grid">
+			<div class="cards">
 				<?php
 				while ( have_posts() ) {
 					the_post();
 
-					get_template_part( 'template-parts/content/entry', get_post_type() );
+					get_template_part( 'template-parts/content/entry_card', get_post_type() );
 				}
 				?>
 			</div>

@@ -7,8 +7,10 @@
 
 @custom-media --narrow-menu-query screen and (max-width: 48em);
 @custom-media --wide-menu-query screen and (min-width: 48em);
-@custom-media --grid-2-columns-query screen and (min-width: 48em);
-@custom-media --grid-3-columns-query screen and (min-width: 48em);
+@custom-media --cards-vertical-2-columns-query screen and (min-width: 40em);
+@custom-media --cards-vertical-3-columns-query screen and (min-width: 48em);
+@custom-media --card-horizontal-layout-query screen and (min-width: 30em);
+@custom-media --cards-horizontal-2-columns-query screen and (min-width: 56em);
 @custom-media --content-query screen and (min-width: 48em);
 @custom-media --sidebar-query screen and (min-width: 60em);
 @custom-media --wide-query screen and (min-width: 72.75em);
