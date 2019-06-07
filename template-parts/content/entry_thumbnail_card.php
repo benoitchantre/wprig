@@ -28,7 +28,7 @@ namespace WP_Rig\WP_Rig;
 		<?php
 	}
 
-	if ( is_home() ) {
+	if ( is_home() || is_search() ) {
 		?>
 		<img class="card__thumbnail-mask" src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/mask-right.svg' ); ?>" />
 		<?php

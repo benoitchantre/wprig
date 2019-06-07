@@ -13,6 +13,8 @@ namespace WP_Rig\WP_Rig;
 	<?php
 	if ( is_home() ) {
 		get_template_part( 'template-parts/content/entry_taxonomies_card', get_post_type() );
+	} elseif ( is_search() ) {
+		get_template_part( 'template-parts/content/entry_taxonomies', get_post_type() );
 	}
 	get_template_part( 'template-parts/content/entry_title', get_post_type() );
 	get_template_part( 'template-parts/content/entry_meta', get_post_type() );
