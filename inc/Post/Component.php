@@ -9,6 +9,9 @@ namespace WP_Rig\WP_Rig\Post;
 
 use WP_Rig\WP_Rig\Component_Interface;
 use function add_filter;
+use function wp_trim_words;
+use function is_home;
+use function is_archive;
 
 /**
  * Class for managing excerpts.
@@ -28,24 +31,24 @@ class Component implements Component_Interface {
 	 * Adds the action and filter hooks to integrate with WordPress.
 	 */
 	public function initialize() {
-		add_filter( 'post_class', array( $this, 'filter_post_class' ), 10, 3 );
+		add_filter( 'the_title', array( $this, 'filter_the_title' ), 10, 2 );
 		add_filter( 'excerpt_length', array( $this, 'filter_excerpt_length' ), 999 );
 		add_filter( 'excerpt_more', array( $this, 'filter_excerpt_more' ) );
 	}
 
 	/**
-	 * Filters the list of CSS class names for the current post.
+	 * Filters the post title.
 	 *
-	 * @param string[] $classes An array of post class names.
-	 * @param string[] $class   An array of additional class names added to the post.
-	 * @param int      $post_id The post ID.
+	 * @param string $title The post title.
+	 * @param int $id The post ID.
+	 * @return string (Maybe) modified post title.
 	 */
-	public function filter_post_class( array $classes, array $class, int $post_id ) {
-		if ( is_home() || is_archive() ) {
-			$classes[] = 'card';
+	public function filter_the_title( string $title, int $id ) : string {
+		if( is_home() || is_archive() ) {
+			return wp_trim_words( $title, 15, ' [...]' );
 		}
 
-		return $classes;
+		return $title;
 	}
 
 	/**
