@@ -32,6 +32,7 @@ class Component implements Component_Interface {
 	 */
 	public function initialize() {
 		add_action( 'after_setup_theme', array( $this, 'action_add_editor_support' ) );
+		add_action( 'init', array( $this, 'action_register_template' ) );
 	}
 
 	/**
@@ -155,4 +156,29 @@ class Component implements Component_Interface {
 			)
 		);
 	}
+
+	/**
+	 * Registers template content
+	 */
+	public function action_register_template() {
+		if ( post_type_exists( 'voxia_team_member' ) ) {
+			$post_type_object           = get_post_type_object( 'voxia_team_member' );
+			$post_type_object->template = array(
+				array( 'voxia-team/position' ),
+				array( 'core/paragraph', array(
+					'placeholder' => __( 'Team member description', 'wp-rig' ),
+				) ),
+				array( 'voxia-team/contact' ),
+				array( 'core/heading', array(
+					'placeholder' => __( 'Skills', 'wp-rig' ),
+				) ),
+				array( 'voxia-team/skills' ),
+				array( 'core/heading', array(
+					'placeholder' => __( 'Expert in', 'wp-rig' ),
+				) ),
+				array( 'voxia-sectors-activity/sectors-selected' ),
+			);
+		}
+	}
+
 }
