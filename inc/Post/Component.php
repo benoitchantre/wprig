@@ -14,7 +14,7 @@ use function is_home;
 use function is_archive;
 
 /**
- * Class for managing excerpts.
+ * Class for managing posts.
  */
 class Component implements Component_Interface {
 
