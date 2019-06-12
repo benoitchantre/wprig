@@ -127,6 +127,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			case 'home.php':
 			case 'archive.php':
 			case 'full-width.php':
+			case 'single-voxia_team_member.php':
 			case '404.php':
 			case '500.php':
 			case 'offline.php':
@@ -220,7 +221,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		}
 
 		// If there's no sidebar, return early.
-		if ( ! is_singular() || ! $this->is_primary_sidebar_active() ) {
+		if ( ! is_singular() || is_singular( 'voxia_team_member' ) || ! $this->is_primary_sidebar_active() ) {
 			return;
 		}
 
